@@ -1,0 +1,108 @@
+/* Authentication Layout */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 20px 40px;
+}
+
+.auth-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+}
+
+.auth-image-col {
+  background: #fcfcfc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.auth-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.auth-form {
+  padding: 50px;
+  flex: 1;
+}
+
+/* Auth Input Styling */
+.input-auth {
+  background-color: #f8f9fa;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 12px 15px;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+  color: #fff !important;
+}
+
+.input-auth::placeholder {
+  color: rgba(255, 255, 255, 0.55) !important;
+}
+
+.input-auth:focus {
+  background-color: white;
+  border-color: var(--accent-orange);
+  box-shadow: 0 0 0 4px rgba(211, 84, 0, 0.1);
+  outline: none;
+}
+
+/* Prevent browser autofill from styling inputs with solid colors and overriding text/icons visibility */
+.input-auth:-webkit-autofill,
+.input-auth:-webkit-autofill:hover, 
+.input-auth:-webkit-autofill:focus, 
+.input-auth:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.12) inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #ffffff;
+}
+
+.check-brand:checked {
+  background-color: var(--accent-orange);
+  border-color: var(--accent-orange);
+}
+
+/* Social Login Buttons */
+.social-login-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin: 0 8px;
+  transition: transform 0.2s;
+}
+
+.social-login-btn:hover {
+  transform: translateY(-2px);
+  color: white;
+}
+
+.social-google   { background-color: #db4437; }
+.social-facebook { background-color: #4267B2; }
+
+/* Hide browser's native password reveal button (Edge / Chrome) */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+input[type="password"]::-webkit-credentials-auto-fill-button,
+input[type="password"]::-webkit-strong-password-auto-fill-button {
+  display: none !important;
+  visibility: hidden;
+  pointer-events: none;
+}

@@ -1,0 +1,530 @@
+/*
+ * ============================================================
+ *  Duyanan Restaurant — Admin Panel UI 
+ * ============================================================
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap');
+
+/* ── Root overrides for the admin page ─────────────────────────── */
+.admin-panel-root {
+  background: linear-gradient(135deg, #1a0e0a 0%, #0f0a07 50%, #1a0f0a 100%) !important;
+  min-height: 100vh;
+}
+
+/* ── Header glow & depth ────────────────────────────────────────── */
+header[style*="accent-orange"] {
+  background: linear-gradient(135deg, #8B3A0F 0%, #5C1F00 60%, #3D1300 100%) !important;
+  border-bottom: 1px solid rgba(212, 164, 80, 0.25) !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(212, 164, 80, 0.15) !important;
+}
+
+/* ── Logo text styling ──────────────────────────────────────────── */
+header span[style*="1.6rem"][style*="bold"] {
+  font-family: 'Jost', sans-serif !important;
+  letter-spacing: 0.03em;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+/* ── Logo 'Administrator' sub-label ────────────────────────────── */
+header div[style*="lineHeight"] span[style*="0.72rem"] {
+  font-family: 'Jost', sans-serif !important;
+  letter-spacing: 0.14em;
+  text-shadow: none;
+  opacity: 0.78;
+}
+
+/* ── Nav buttons in header ──────────────────────────────────────── */
+header .btn.rounded-pill {
+  font-family: 'Jost', sans-serif !important;
+  font-size: 0.88rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em;
+  border-radius: 10px !important;
+  padding: 7px 16px !important;
+  transition: all 0.22s ease !important;
+}
+
+header .btn.rounded-pill.bg-white {
+  background: rgba(255, 255, 255, 0.97) !important;
+  color: #3D1300 !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.25), 0 0 0 1px rgba(212,164,80,0.3) !important;
+}
+
+header .btn.rounded-pill:not(.bg-white) {
+  color: rgba(255,255,255,0.75) !important;
+}
+
+header .btn.rounded-pill:not(.bg-white):hover {
+  background: rgba(255,255,255,0.12) !important;
+  color: #fff !important;
+}
+
+/* ── Main content background ────────────────────────────────────── */
+.flex-grow-1.w-100[style*="fdfcfb"] {
+  background: linear-gradient(160deg, #fdf8f2 0%, #f5ece0 40%, #faf4ec 100%) !important;
+  background-attachment: fixed !important;
+}
+
+/* ── Page padding area ──────────────────────────────────────────── */
+.p-4.p-md-5 {
+  padding: 1.75rem 2.25rem !important;
+}
+
+@media (max-width: 768px) {
+  .p-4.p-md-5 {
+    padding: 1.25rem 1rem !important;
+  }
+}
+
+/* ── Page heading enhancement ───────────────────────────────────── */
+h3.fw-bold[style*="primary-brown"] {
+  font-family: 'Jost', sans-serif !important;
+  font-size: 1.5rem !important;
+  letter-spacing: -0.01em;
+  position: relative;
+  padding-bottom: 12px;
+  margin-bottom: 28px !important;
+}
+
+h3.fw-bold[style*="primary-brown"]::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-orange), transparent);
+  border-radius: 4px;
+}
+
+/* ── StatBox cards ──────────────────────────────────────────────── */
+.card.border.border-light.shadow-sm.rounded-3 {
+  background: #ffffff !important;
+  border: none !important;
+  border-radius: 18px !important;
+  box-shadow: 0 4px 20px rgba(90, 30, 0, 0.08), 0 1px 4px rgba(90,30,0,0.05) !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.card.border.border-light.shadow-sm.rounded-3::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-orange), var(--primary-brown));
+}
+
+.card.border.border-light.shadow-sm.rounded-3:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 32px rgba(90, 30, 0, 0.14), 0 2px 8px rgba(90,30,0,0.08) !important;
+}
+
+/* StatBox labels */
+.card.border.border-light h6.text-muted {
+  font-family: 'Jost', sans-serif !important;
+  font-size: 0.7rem !important;
+  letter-spacing: 0.14em !important;
+  color: #9a7060 !important;
+}
+
+/* StatBox values */
+.card.border.border-light h2[style*="primary-brown"] {
+  font-family: 'Jost', sans-serif !important;
+  font-size: 1.8rem !important;
+  color: var(--primary-brown) !important;
+}
+
+/* ── Chart card ─────────────────────────────────────────────────── */
+.card.border-0.shadow-sm.rounded-4 {
+  border-radius: 20px !important;
+  box-shadow: 0 4px 24px rgba(90, 30, 0, 0.08) !important;
+  border: 1px solid rgba(211, 84, 0, 0.08) !important;
+  background: #fff !important;
+  transition: box-shadow 0.25s !important;
+}
+
+.card.border-0.shadow-sm.rounded-4:hover {
+  box-shadow: 0 8px 36px rgba(90, 30, 0, 0.13) !important;
+}
+
+/* Chart card heading */
+.card.border-0.shadow-sm.rounded-4 h5[style*="primary-brown"] {
+  font-family: 'Jost', sans-serif !important;
+  font-size: 1.2rem !important;
+  color: var(--primary-brown) !important;
+}
+
+/* ── Table header ───────────────────────────────────────────────── */
+thead[style*="accent-orange"] {
+  background: linear-gradient(90deg, #8B3A0F, #5C1F00) !important;
+}
+
+thead[style*="accent-orange"] th {
+  font-family: 'Jost', sans-serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase;
+  padding: 16px 20px !important;
+  color: rgba(255,255,255,0.9) !important;
+}
+
+thead[style*="accent-orange"] th:first-child {
+  border-left: 3px solid rgba(212, 164, 80, 0.6) !important;
+}
+
+/* ── Table body rows ────────────────────────────────────────────── */
+.table.table-hover.align-middle tbody tr {
+  transition: background 0.15s ease !important;
+  border-bottom: 1px solid rgba(211, 84, 0, 0.06) !important;
+}
+
+.table.table-hover.align-middle tbody tr:hover {
+  background: rgba(211, 84, 0, 0.04) !important;
+}
+
+.table.table-hover.align-middle tbody td {
+  font-family: 'Jost', sans-serif !important;
+  font-size: 0.88rem !important;
+  padding: 14px 20px !important;
+  vertical-align: middle;
+  color: #3a2010;
+}
+
+/* ID columns */
+.table tbody td.px-4.fw-bold:first-child {
+  color: var(--accent-orange) !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+}
+
+/* Price columns */
+.table tbody td.px-4.fw-bold {
+  font-family: 'Jost', sans-serif !important;
+  font-weight: 700 !important;
+}
+
+/* ── Badges / Status Pills ──────────────────────────────────────── */
+.badge.rounded-pill {
+  font-family: 'Jost', sans-serif !important;
+  font-size: 0.68rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  padding: 5px 13px !important;
+  border-radius: 20px !important;
+}
+
+.badge.rounded-pill.bg-warning {
+  background: rgba(245, 158, 11, 0.15) !important;
+  color: #b45309 !important;
+  border: 1px solid rgba(245, 158, 11, 0.3) !important;
+}
+
+.badge.rounded-pill.bg-success {
+  background: rgba(16, 185, 129, 0.12) !important;
+  color: #047857 !important;
+  border: 1px solid rgba(16, 185, 129, 0.25) !important;
+}
+
+.badge.rounded-pill.bg-info {
+  background: rgba(59, 130, 246, 0.12) !important;
+  color: #1d4ed8 !important;
+  border: 1px solid rgba(59, 130, 246, 0.25) !important;
+}
+
+.badge.rounded-pill.bg-danger {
+  background: rgba(239, 68, 68, 0.1) !important;
+  color: #b91c1c !important;
+  border: 1px solid rgba(239, 68, 68, 0.2) !important;
+}
+
+.badge.rounded-pill.bg-primary {
+  background: rgba(99, 102, 241, 0.1) !important;
+  color: #4338ca !important;
+  border: 1px solid rgba(99, 102, 241, 0.2) !important;
+}
+
+/* ── Action selects ─────────────────────────────────────────────── */
+.form-select.form-select-sm.d-inline-block {
+  font-family: 'Jost', sans-serif !important;
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  border: 1px solid rgba(211, 84, 0, 0.2) !important;
+  color: var(--primary-brown) !important;
+  background-color: #fffaf6 !important;
+  padding: 5px 28px 5px 10px !important;
+  transition: border-color 0.2s, box-shadow 0.2s !important;
+  cursor: pointer;
+}
+
+.form-select.form-select-sm.d-inline-block:focus {
+  border-color: var(--accent-orange) !important;
+  box-shadow: 0 0 0 3px rgba(211, 84, 0, 0.12) !important;
+  outline: none !important;
+}
+
+/* ── "Add New Item" button ──────────────────────────────────────── */
+button.btn[style*="accent-orange"].shadow-sm {
+  background: linear-gradient(135deg, var(--accent-orange), var(--primary-brown)) !important;
+  border-radius: 12px !important;
+  font-family: 'Jost', sans-serif !important;
+  font-size: 0.88rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.03em;
+  box-shadow: 0 4px 16px rgba(211, 84, 0, 0.35) !important;
+  transition: all 0.22s ease !important;
+  border: none !important;
+}
+
+button.btn[style*="accent-orange"].shadow-sm:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(211, 84, 0, 0.45) !important;
+  filter: brightness(1.08);
+}
+
+/* ── Product form card ──────────────────────────────────────────── */
+.card.mb-5.border-0.shadow-sm.rounded-4[style*="fffaf5"] {
+  background: linear-gradient(135deg, #fffbf5, #fff8ef) !important;
+  border: 1px solid rgba(211, 84, 0, 0.12) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 8px 32px rgba(90, 30, 0, 0.1) !important;
+}
+
+.card.mb-5 h5[style*="primary-brown"] {
+  font-family: 'Jost', sans-serif !important;
+  font-size: 1.15rem !important;
+}
+
+/* Form labels */
+.form-label.small.fw-bold.text-muted {
+  font-family: 'Jost', sans-serif !important;
+  font-size: 0.7rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase;
+  color: #9a7060 !important;
+}
+
+/* Form inputs */
+.form-control.bg-white,
+.form-select.bg-white {
+  border-radius: 10px !important;
+  border: 1.5px solid rgba(211, 84, 0, 0.15) !important;
+  font-family: 'Jost', sans-serif !important;
+  font-size: 0.9rem !important;
+  color: #3a2010 !important;
+  transition: border-color 0.2s, box-shadow 0.2s !important;
+  padding: 10px 14px !important;
+}
+
+.form-control.bg-white:focus,
+.form-select.bg-white:focus {
+  border-color: var(--accent-orange) !important;
+  box-shadow: 0 0 0 3px rgba(211, 84, 0, 0.12) !important;
+  outline: none !important;
+}
+
+/* Submit button in form */
+button.btn[style*="accent-orange"].px-5 {
+  background: linear-gradient(135deg, var(--accent-orange), var(--primary-brown)) !important;
+  border-radius: 10px !important;
+  font-family: 'Jost', sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.03em;
+  box-shadow: 0 4px 14px rgba(211, 84, 0, 0.3) !important;
+  transition: all 0.2s ease !important;
+  border: none !important;
+}
+
+button.btn[style*="accent-orange"].px-5:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 20px rgba(211, 84, 0, 0.4) !important;
+}
+
+/* Cancel button */
+button.btn.btn-light.px-5 {
+  border-radius: 10px !important;
+  font-family: 'Jost', sans-serif !important;
+  font-weight: 600 !important;
+  background: #f1e8df !important;
+  color: #8B3A0F !important;
+  border: 1px solid rgba(211, 84, 0, 0.15) !important;
+  transition: all 0.2s ease !important;
+}
+
+button.btn.btn-light.px-5:hover {
+  background: #e8d9cc !important;
+  border-color: rgba(211, 84, 0, 0.25) !important;
+}
+
+/* ── Action icon buttons (edit/delete) ──────────────────────────── */
+.btn.btn-sm.text-primary.p-2 {
+  border-radius: 8px !important;
+  background: rgba(99, 102, 241, 0.08) !important;
+  border: 1px solid rgba(99, 102, 241, 0.15) !important;
+  transition: all 0.18s ease !important;
+  color: #4338ca !important;
+}
+
+.btn.btn-sm.text-primary.p-2:hover {
+  background: rgba(99, 102, 241, 0.16) !important;
+  transform: scale(1.08) !important;
+}
+
+.btn.btn-sm.text-danger.p-2 {
+  border-radius: 8px !important;
+  background: rgba(239, 68, 68, 0.07) !important;
+  border: 1px solid rgba(239, 68, 68, 0.15) !important;
+  transition: all 0.18s ease !important;
+}
+
+.btn.btn-sm.text-danger.p-2:hover {
+  background: rgba(239, 68, 68, 0.15) !important;
+  transform: scale(1.08) !important;
+}
+
+/* ── Logout button ──────────────────────────────────────────────── */
+.btn.btn-outline-light.d-flex.align-items-center.gap-2 {
+  border: 1.5px solid rgba(255, 255, 255, 0.45) !important;
+  border-radius: 10px !important;
+  font-family: 'Jost', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 0.82rem !important;
+  letter-spacing: 0.06em;
+  color: #fff !important;
+  background: rgba(255,255,255,0.08) !important;
+  transition: all 0.22s ease !important;
+  backdrop-filter: blur(4px);
+}
+
+.btn.btn-outline-light.d-flex.align-items-center.gap-2:hover {
+  background: rgba(255,255,255,0.2) !important;
+  border-color: rgba(255,255,255,0.75) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2) !important;
+}
+
+/* ── Bar chart bars (Sales tab) ─────────────────────────────────── */
+.d-flex.justify-content-center.align-items-end div > div[style*="accent-orange"] {
+  background: linear-gradient(180deg, #e8793a, var(--accent-orange)) !important;
+  border-radius: 8px 8px 0 0 !important;
+  box-shadow: 0 -4px 16px rgba(211, 84, 0, 0.25) !important;
+  transition: height 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.d-flex.justify-content-center.align-items-end div > div[style*="accent-orange"]:hover {
+  filter: brightness(1.15) !important;
+}
+
+/* ── SVG chart (Dashboard) ──────────────────────────────────────── */
+svg path[stroke*="accent-orange"] {
+  filter: drop-shadow(0 2px 8px rgba(211, 84, 0, 0.3));
+}
+
+/* ── Forecasting insight card ───────────────────────────────────── */
+.card.border-0.shadow-sm.rounded-4.p-4.h-100.bg-white.d-flex {
+  border-left: 4px solid var(--accent-orange) !important;
+}
+
+/* ── Spinner ────────────────────────────────────────────────────── */
+.spinner-border[style*="accent-orange"] {
+  border-color: rgba(211, 84, 0, 0.2) !important;
+  border-top-color: var(--accent-orange) !important;
+  width: 3rem !important;
+  height: 3rem !important;
+}
+
+/* ── Success alert ──────────────────────────────────────────────── */
+.alert.alert-success.border-0.shadow-lg.rounded-4 {
+  background: linear-gradient(135deg, #ecfdf5, #d1fae5) !important;
+  border: 1px solid rgba(16, 185, 129, 0.3) !important;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12), 0 2px 8px rgba(16,185,129,0.15) !important;
+  border-radius: 14px !important;
+  font-family: 'Jost', sans-serif !important;
+  font-size: 0.9rem !important;
+}
+
+/* ── Mobile drawer enhancement ──────────────────────────────────── */
+.admin-mobile-drawer {
+  background: linear-gradient(160deg, #8B3A0F 0%, #5C1F00 60%, #3D1300 100%) !important;
+  box-shadow: 6px 0 30px rgba(0,0,0,0.4) !important;
+}
+
+/* ── Product thumbnail ──────────────────────────────────────────── */
+.table img.rounded-2 {
+  border-radius: 10px !important;
+  border: 2px solid rgba(211, 84, 0, 0.12) !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+  transition: transform 0.2s !important;
+}
+
+.table img.rounded-2:hover {
+  transform: scale(1.1) !important;
+}
+
+/* ── Image placeholder ──────────────────────────────────────────── */
+.bg-light.rounded-2.me-3 {
+  background: linear-gradient(135deg, #f5ede3, #eddbc8) !important;
+  border-radius: 10px !important;
+  border: 1.5px solid rgba(211, 84, 0, 0.1) !important;
+}
+
+/* ── Empty state rows ───────────────────────────────────────────── */
+.table tbody tr td[colspan] {
+  color: #b89080 !important;
+  font-family: 'Jost', sans-serif !important;
+  font-size: 0.9rem !important;
+  font-style: italic;
+}
+
+/* ── General text enhancements ──────────────────────────────────── */
+.text-muted {
+  color: #9a7060 !important;
+}
+
+.fw-bold {
+  font-family: 'Jost', sans-serif !important;
+}
+
+/* ── Smooth fade-in ─────────────────────────────────────────────── */
+@keyframes adminEnhancedFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: adminEnhancedFadeIn 0.4s ease forwards !important;
+}
+
+/* ── Scrollbar styling ──────────────────────────────────────────── */
+.flex-grow-1.w-100::-webkit-scrollbar {
+  width: 6px;
+}
+
+.flex-grow-1.w-100::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.flex-grow-1.w-100::-webkit-scrollbar-thumb {
+  background: rgba(211, 84, 0, 0.25);
+  border-radius: 6px;
+}
+
+.flex-grow-1.w-100::-webkit-scrollbar-thumb:hover {
+  background: rgba(211, 84, 0, 0.4);
+}
+
+/* ── Administrator label in header ─────────────────────────────── */
+header span.me-3.fw-bold {
+  font-family: 'Jost', sans-serif !important;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.78rem !important;
+  opacity: 0.85 !important;
+}

@@ -1,0 +1,140 @@
+/* Navigation Styles */
+.nav-glass {
+  transition: all 0.4s ease-in-out;
+  border-bottom: 1px solid transparent;
+}
+
+.nav-filled {
+  background: linear-gradient(to bottom, var(--accent-orange), var(--dark-brown));
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+}
+
+.nav-clear {
+  background: transparent;
+  box-shadow: none;
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Nav Link Hover Effect */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: white;
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 80%;
+}
+
+/* Mobile Menu Glass */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background: #fff;
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    width: 80%;
+    max-width: 320px;
+    height: calc(100vh - var(--nav-height));
+    padding: 20px 20px;
+    margin-top: 0;
+    border: none;
+    box-shadow: 4px 0 15px rgba(0,0,0,0.1);
+    overflow-y: auto;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    z-index: 1040;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .navbar-collapse:not(.collapse) {
+    transform: translateX(0);
+  }
+
+  .navbar-collapse.collapse {
+    /* We use translate instead of display none to animate */
+    display: flex !important;
+  }
+
+  /* Menu Items in Sidebar */
+  .navbar-nav {
+    width: 100%;
+    align-items: flex-start !important;
+    margin-top: 20px;
+  }
+
+  .navbar-nav .nav-item {
+    width: 100%;
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(160, 64, 0, 0.08);
+  }
+
+  .navbar-nav .nav-item:last-child {
+    border-bottom: none;
+  }
+
+  .nav-header {
+    border-bottom: 1px solid rgba(160, 64, 0, 0.15) !important;
+    padding-bottom: 5px;
+    margin-bottom: 8px !important;
+  }
+
+  .navbar-nav .nav-link {
+    color: var(--primary-brown) !important;
+    font-size: 1.1rem;
+    padding: 12px 15px;
+    width: 100%;
+    border-radius: 0;
+    text-shadow: none !important;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
+    background: rgba(160, 64, 0, 0.05);
+  }
+
+  .navbar-nav .nav-link::after {
+    display: none;
+  }
+}
+
+/* Nav Button Hover Expansion */
+.btn-expandable {
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-expandable span.btn-expandable-label {
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.btn-expandable:hover span.btn-expandable-label {
+  max-width: 100px;
+  opacity: 1;
+  margin-left: 5px;
+}
